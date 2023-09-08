@@ -62,6 +62,15 @@ class MainActivity : AppCompatActivity() {
     override fun onResume(){
         super.onResume()
     }
+    override fun onPause(){
+        super.onPause()
+    }
+    override fun onStop(){
+        super.onStop()
+    }
+    override fun onDestroy(){
+        super.onDestroy()
+    }
     fun wireWidgets(){
         startMain = findViewById(R.id.start_button_main)
         stopMain = findViewById(R.id.stop_button_main)
