@@ -30,15 +30,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         wireWidgets()
         Log.d(TAG, "onCreate: this is a log")
-        watchMain.freezesText = true
         startMain.setOnClickListener {
-            watchMain.freezesText = false
             watchMain.start()
             startMain.visibility = View.INVISIBLE
             stopMain.visibility = View.VISIBLE
             stopMain.setOnClickListener {
                 watchMain.stop()
-                watchMain.freezesText = true
                 stopMain.visibility = View.INVISIBLE
                 startMain.visibility = View.VISIBLE
             }
@@ -55,21 +52,27 @@ class MainActivity : AppCompatActivity() {
     //function that exists in the superclass)
     override fun onStart(){
         super.onStart()
+        Log.d(TAG, "onStart: ")
     }
     override fun onRestart(){
         super.onRestart()
+        Log.d(TAG, "onRestart: ")
     }
     override fun onResume(){
         super.onResume()
+        Log.d(TAG, "onResume: ")
     }
     override fun onPause(){
         super.onPause()
+        Log.d(TAG, "onPause: ")
     }
     override fun onStop(){
         super.onStop()
+        Log.d(TAG, "onStop: ")
     }
     override fun onDestroy(){
         super.onDestroy()
+        Log.d(TAG, "onDestroy: ")
     }
     fun wireWidgets(){
         startMain = findViewById(R.id.start_button_main)
